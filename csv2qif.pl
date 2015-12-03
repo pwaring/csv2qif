@@ -9,10 +9,11 @@ use autodie;
 use Text::CSV;
 
 my $csv = Text::CSV->new({ binary => 1 });
-my $skip_headers = 1;
-my $skipped_headers = 0;
 
 $csv->column_names( qw( date type sort_code account_number description debit credit balance ) );
+
+my $skip_headers = 1;
+my $skipped_headers = 0;
 
 say '!Type:Bank';
 
