@@ -1,6 +1,6 @@
 # csv2qif
 
-Perl script for converting CSV to QIF.
+Perl script for converting [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) to [QIF](https://en.wikipedia.org/wiki/Quicken_Interchange_Format).
 
 ## Requirements
 
