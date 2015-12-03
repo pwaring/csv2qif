@@ -22,7 +22,7 @@ Before running the script, you need to make two changes. First you must define a
 $csv->column_names( qw( date type sort_code account_number description debit credit balance ) );
 ```
 
-The column names which matter are: `date`, `description`, `debit` and `credit`. Other columns must be specified but their name does not matter.
+The column names which matter are: `date`, `description`, `debit` and `credit`. Other columns must be specified but their names do not affect the script.
 
 If your CSV file does not include headers (i.e. data starts on line 1) then you should change this line:
 
