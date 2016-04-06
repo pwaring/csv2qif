@@ -11,10 +11,26 @@ use Getopt::Long;
 
 my $csv = Text::CSV->new({ binary => 1 });
 
-$csv->column_names( qw( date type sort_code account_number description debit credit balance ) );
-
 my $skip_headers = '';
-GetOptions('skip-headers' => \$skip_headers);
+my $config = '';
+GetOptions(
+  'skip-headers' => \$skip_headers,
+  'config=s' => \$config
+);
+
+if (!$config)
+{
+  die("No config file specified, use --config [file]");
+}
+
+# Open configuration file to get column names
+open my $config_file, '<', $config;
+my $column_names = <$config_file>;
+close $config_file;
+
+my @column_names = split(/\s+/, $column_names);
+
+$csv->column_names( @column_names );
 
 my $skipped_headers = 0;
 
