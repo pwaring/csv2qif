@@ -46,20 +46,23 @@ while (my $row = $csv->getline_hr($fh))
   }
   else
   {
-    say 'D' . $row->{date};
-
-    if ($row->{credit} ne '')
+    if (defined($row->{date}) && defined($row->{credit}) && defined($row->{debit}) && defined($row->{description}))
     {
-      say 'T' . $row->{credit};
-    }
-    else
-    {
-      say 'T-' . $row->{debit};
-    }
+      say 'D' . $row->{date};
 
-    say 'P' . $row->{description};
+      if ($row->{credit} ne '')
+      {
+        say 'T' . $row->{credit};
+      }
+      else
+      {
+        say 'T-' . $row->{debit};
+      }
 
-    say '^';
+      say 'P' . $row->{description};
+
+      say '^';  
+    }
   }
 }
 
