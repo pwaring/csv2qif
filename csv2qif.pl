@@ -7,12 +7,15 @@ use warnings;
 use autodie;
 
 use Text::CSV;
+use Getopt::Long;
 
 my $csv = Text::CSV->new({ binary => 1 });
 
 $csv->column_names( qw( date type sort_code account_number description debit credit balance ) );
 
-my $skip_headers = 1;
+my $skip_headers = '';
+GetOptions('skip-headers' => \$skip_headers);
+
 my $skipped_headers = 0;
 
 say '!Type:Bank';
