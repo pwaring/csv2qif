@@ -1,0 +1,1 @@
+date type bank_reference description credit debit additional balance
