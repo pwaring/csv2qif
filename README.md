@@ -11,11 +11,11 @@ considered the minimum).
 ## Usage
 
 The script takes CSV data from standard input and produces QIF data on standard
-output. To convert a file `statement.csv` to `statement.qif` you will need to
-run the following command:
+output. To convert a file `statement.csv` to `statement.qif` from a Co-op
+Business Account you will need to run the following command:
 
 ```
-cat statement.csv | perl ./csv2qif.pl > statement.qif
+cat statement.csv | perl ./csv2qif.pl --skip-headers --config files/co-op-business.txt > statement.qif
 ```
 
 ### Command line options
