@@ -1,3 +1,3 @@
 # csv2qif
 
-Perl and Python scripts for converting CSV to QIF.
+Python script for converting CSV to QIF.
