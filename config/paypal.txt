@@ -1,0 +1,1 @@
+date time timezone description currency gross fee net balance transaction_id from_email from_name bank_name bank_account postage vat invoice_id reference
