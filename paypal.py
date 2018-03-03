@@ -26,7 +26,8 @@ with open(args.csv_file, newline='') as csv_file:
         else:
             print('D' + row['date'])
             print('T' + row['gross'])
-            print('P' + row['description'])
+            print('P' + row['from_name'])
+            print('M' + row['description'])
             print('^')
 
             # Process fee as separate transaction - PayPal puts it on one line
@@ -35,5 +36,6 @@ with open(args.csv_file, newline='') as csv_file:
             if fee < 0 or fee > 0:
                 print('D' + row['date'])
                 print('T' + row['fee'])
-                print('P' + 'PayPal fee')
+                print('P' + 'PayPal')
+                print('M' + 'PayPal fee')
                 print('^')
